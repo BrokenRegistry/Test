@@ -23,8 +23,17 @@
 		<exeVersion>${current.time}</exeVersion>
 		<!-- Tag Format yyyy/MM/dd/HH/mm -->
 		<gitHubTag>${build.date}</gitHubTag>
-		<RepoId>Test</RepoId>
-		<AuthorId>BrokenRegistry</AuthorId>
+		<!-- ################################################## -->
+		<!-- Parameters to be set for GitHub Build thru actions -->
+		<!-- <RepoId>Test</RepoId>                              -->
+		<!-- <AuthorId>BrokenRegistry</AuthorId>                -->
+		<!-- <AuthorId> and <RepoId>                            -->
+		<!-- In Settings: Actions have to be enabled            -->
+		<!-- In Settings: Give workflows the right to write     -->
+		<!-- ################################################## -->
+		<RepoId>To Be Set</RepoId>
+		<AuthorId>To Be Set</AuthorId>
+		<!-- ################################################## -->
 		<pdfFileName>Description.pdf</pdfFileName>
 		<BaseFileName>rotp-${revision}</BaseFileName>
 	 	<!-- Maven Standard -->
@@ -39,15 +48,15 @@
 	<scm>
 		<connection>scm:git:${project.scm.url}</connection>
 		<developerConnection>scm:git:${project.scm.url}</developerConnection>
-		<url>https://github.com/BrokenRegistry/Test.git</url>
+		<url>https://github.com/${AuthorId}/${AuthorId}.git</url>
 		<tag>HEAD</tag>
 	</scm>
 
 	<distributionManagement>
 		<repository>
 			<id>github</id>
-			<name>BrokenRegistry</name>
-			<url>https://maven.pkg.github.com/BrokenRegistry/Test</url>
+			<name>${AuthorId}</name>
+			<url>https://maven.pkg.github.com/${AuthorId}/${AuthorId}</url>
 		</repository>
 	</distributionManagement>
 
@@ -423,8 +432,8 @@
 					<execution>
 						<id>default-cli</id>
 						<configuration>
-							<owner>BrokenRegistry</owner>
-							<repository>Test</repository>
+							<owner>${AuthorId}</owner>
+							<repository>${AuthorId}</repository>
 							<authToken>${GITHUB_TOKEN}</authToken>
 							<tagName>${build.date}</tagName>
 							<name>${BaseFileName}</name>
