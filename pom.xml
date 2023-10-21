@@ -25,14 +25,18 @@
 		<gitHubTag>${build.date}</gitHubTag>
 		<!-- ################################################## -->
 		<!-- Parameters to be set for GitHub Build thru actions -->
-		<!-- <RepoId>Test</RepoId>                              -->
+		<!-- <RepoId>Fusion-Mod</RepoId>                        -->
 		<!-- <AuthorId>BrokenRegistry</AuthorId>                -->
-		<!-- <AuthorId> and <RepoId>                            -->
+		<!-- <BranchId>main</BranchId>                          -->
+		<!-- <NotesId>releaseNotes.md</NotesId>                 -->
+		<!-- Don't Forget:                                      -->
 		<!-- In Settings: Actions have to be enabled            -->
 		<!-- In Settings: Give workflows the right to write     -->
 		<!-- ################################################## -->
 		<RepoId>ToTest</RepoId>
 		<AuthorId>ToBrokenRegistry</AuthorId>
+		<BranchId>Tomain</BranchId>
+		<NotesId>ToreleaseNotesBR.md</NotesId>
 		<!-- ################################################## -->
 		<pdfFileName>Description.pdf</pdfFileName>
 		<BaseFileName>rotp-${revision}</BaseFileName>
@@ -437,7 +441,7 @@
 							<authToken>${GITHUB_TOKEN}</authToken>
 							<tagName>${build.date}</tagName>
 							<name>${BaseFileName}</name>
-							<targetCommitish>main</targetCommitish>
+							<targetCommitish>${BranchId}</targetCommitish>
 							<releaseNotes>${NotesId}</releaseNotes>
 							<assets>
 								<asset>target/${BaseFileName}.jar</asset>
