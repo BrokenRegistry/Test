@@ -1,0 +1,22 @@
+name: Other testing
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  dump_contexts_to_log:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dump Repo Name
+        env:
+          GITHUB_REPO: ${{ github.event.repository.name }}
+        run: echo "$GITHUB_REPO"
+      - name: Dump Branch Name
+        env:
+          GITHUB_BRANCH: ${{ github.event.ref_name }}
+        run: echo "$GITHUB_BRANCH"
+      - name: Dump Branch Name 2
+        env:
+          GITHUB_BRANCH2: ${{ github.event.repository.ref_name }}
+        run: echo "$GITHUB_BRANCH2"
+        
