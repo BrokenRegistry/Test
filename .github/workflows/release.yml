@@ -32,8 +32,8 @@ jobs:
            -DrepOwner=${{ github.repository_owner }}
            -DrepName=${{ github.event.repository.name }}
            -DrepFullName=${{ github.repository }}
-           -DrepBranch=${{ github.event.repository.ref_name }}
-           -Dnotes=releaseNotesBR.md
+           -DrepBranch=${{ github.ref_name }}
+           -Dnotes=$RELEASE_NOTES
            -Dhide=false
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
