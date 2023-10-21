@@ -429,6 +429,15 @@
 							<tagName>${build.date}</tagName>
 							<name>${BaseFileName}</name>
 							<targetCommitish>main</targetCommitish>
+							<releaseNotes>releaseNotesBR.md</releaseNotes>
+							<assets>
+								<asset>target/${BaseFileName}.jar</asset>
+								<asset>target/${BaseFileName}-mini.jar</asset>
+								<asset>target/${BaseFileName}-windows.zip</asset>
+								<asset>${pdfFileName}</asset>
+								<asset>BitmapGalaxyExamples.zip</asset>
+								<!-- <asset>Profiles.pdf</asset> -->
+							</assets>
 						</configuration>
 					</execution>
 				</executions>
