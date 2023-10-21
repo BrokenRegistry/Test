@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: Dump Repo Name
         env:
-          GITHUB_REPO: ${{ toJson(github.event.repository) }}
+          GITHUB_REPO: ${{ toJson(github.ref_name) }}
         run: echo "$GITHUB_REPO"
       - name: Dump Branch Name
         env:
@@ -17,6 +17,6 @@ jobs:
         run: echo "$GITHUB_BRANCH"
       - name: Dump Branch Name 2
         env:
-          GITHUB_BRANCH2: ${{ toJson(github.event.repository.ref_name) }}
+          GITHUB_BRANCH2: ${{ toJson(github.ref_name) }}
         run: echo "$GITHUB_BRANCH2"
         
