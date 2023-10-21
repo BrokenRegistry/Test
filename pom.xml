@@ -26,8 +26,8 @@
 		<!-- #################################################### -->
 		<!-- Parameters that ca be overriden in .yml Actions file -->
 		<!-- <RepoId>Fusion-Mod</RepoId>                          -->
-		<!-- <repOwner>BrokenRegistry</repOwner>                        -->
-		<!-- <repository>ToBrokenRegistry/Fusion-Mod</repository> -->
+		<!-- <repOwner>BrokenRegistry</repOwner>                  -->
+		<!-- <folder>ToBrokenRegistry/Fusion-Mod</folder>         -->
 		<!-- <branch>main</branch>                                -->
 		<!-- <notes>releaseNotes.md</notes>                       -->
 		<!-- <Hide>false</Hide> # Publish as draft?               -->
@@ -38,7 +38,7 @@
 		<!-- Default values if not overriden -->
 		<RepoId>Fusion-Mod</RepoId>
 		<repOwner>ToBrokenRegistry</repOwner>
-		<repository>ToBrokenRegistry/Fusion-Mod</repository>
+		<folder>ToBrokenRegistry/Fusion-Mod</folder>
 		<branch>Tomain</branch>
 		<notes>releaseNotes.md</notes>
 		<Hide>false</Hide>
@@ -57,7 +57,7 @@
 	<scm>
 		<connection>scm:git:${project.scm.url}</connection>
 		<developerConnection>scm:git:${project.scm.url}</developerConnection>
-		<url>https://github.com/${repository}.git</url>
+		<url>https://github.com/${folder}.git</url>
 		<tag>HEAD</tag>
 	</scm>
 
@@ -65,7 +65,7 @@
 		<repository>
 			<id>github</id>
 			<name>${repOwner}</name>
-			<url>https://maven.pkg.github.com/${repository}</url>
+			<url>https://maven.pkg.github.com/${folder}</url>
 		</repository>
 	</distributionManagement>
 
@@ -442,7 +442,7 @@
 						<id>default-cli</id>
 						<configuration>
 							<owner>${repOwner}</owner>
-							<repository>${RepoId}</repository>
+							<repository>${folder}</repository>
 							<authToken>${GITHUB_TOKEN}</authToken>
 							<tagName>${build.date}</tagName>
 							<name>${BaseFileName}</name>
