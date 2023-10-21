@@ -6,6 +6,9 @@ name: Test Release
 on:
   workflow_dispatch:
 
+env:
+  RELEASE_NOTES: ${{ github.repository_owner == 'Xilmi' && 'releaseNotesXilmi.md' || 'releaseNotesBR.md' }}
+  
 jobs:
   build:
 
@@ -28,12 +31,12 @@ jobs:
     - name: Check CPU
       run: sudo cat /proc/cpuinfo
     - name: Build with Maven
-      run: mvn -B clean package github-release:github-release -DGITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} -Dmaven.javadoc.skip=true
+      run: mvn -B -fae clean package github-release:github-release -DGITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} -Dmaven.javadoc.skip=true
            -DrepOwner=${{ github.repository_owner }}
            -DrepName=${{ github.event.repository.name }}
            -DrepFullName=${{ github.repository }}
-           -DrepBranch=main
-           -Dnotes=releaseNotesBR.md
+           -DrepBranch=${{ github.event.repository.ref_name }}
+           -Dnotes=$RELEASE_NOTES
            -Dhide=false
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
