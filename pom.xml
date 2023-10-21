@@ -24,24 +24,24 @@
 		<!-- Tag Format yyyy/MM/dd/HH/mm -->
 		<gitHubTag>${build.date}</gitHubTag>
 		<!-- #################################################### -->
-		<!-- Parameters that ca be overriden in .yml Actions file -->
-		<!-- <RepoId>Fusion-Mod</RepoId>                          -->
+		<!-- Parameters that'll be overriden in .yml Actions file -->
+		<!-- <repName>Fusion-Mod</repName>                        -->
 		<!-- <repOwner>BrokenRegistry</repOwner>                  -->
-		<!-- <folder>ToBrokenRegistry/Fusion-Mod</folder>         -->
-		<!-- <branch>main</branch>                                -->
+		<!-- <repFullName>BrokenRegistry/Fusion-Mod</repFullName> -->
+		<!-- <repBranch>main</repBranch>                          -->
 		<!-- <notes>releaseNotes.md</notes>                       -->
-		<!-- <Hide>false</Hide> # Publish as draft?               -->
+		<!-- <hide>false</hide> # Publish as draft?               -->
 		<!-- Don't Forget:                                        -->
 		<!-- In Settings: Actions have to be enabled              -->
 		<!-- In Settings: Give workflows the right to write       -->
 		<!-- #################################################### -->
 		<!-- Default values if not overriden -->
-		<RepoId>Fusion-Mod</RepoId>
+		<repName>Fusion-Mod</repName>
 		<repOwner>ToBrokenRegistry</repOwner>
-		<folder>ToBrokenRegistry/Fusion-Mod</folder>
-		<branch>Tomain</branch>
+		<repFullName>ToBrokenRegistry/Fusion-Mod</repFullName>
+		<repBranch>Tomain</repBranch>
 		<notes>releaseNotes.md</notes>
-		<Hide>false</Hide>
+		<hide>false</hide>
 		<!-- #################################################### -->
 		<pdfFileName>Description.pdf</pdfFileName>
 		<BaseFileName>rotp-${revision}</BaseFileName>
@@ -57,7 +57,7 @@
 	<scm>
 		<connection>scm:git:${project.scm.url}</connection>
 		<developerConnection>scm:git:${project.scm.url}</developerConnection>
-		<url>https://github.com/${folder}.git</url>
+		<url>https://github.com/${repFullName}.git</url>
 		<tag>HEAD</tag>
 	</scm>
 
@@ -65,7 +65,7 @@
 		<repository>
 			<id>github</id>
 			<name>${repOwner}</name>
-			<url>https://maven.pkg.github.com/${folder}</url>
+			<url>https://maven.pkg.github.com/${repFullName}</url>
 		</repository>
 	</distributionManagement>
 
@@ -442,13 +442,13 @@
 						<id>default-cli</id>
 						<configuration>
 							<owner>${repOwner}</owner>
-							<repository>${folder}</repository>
+							<repository>${repName}</repository>
 							<authToken>${GITHUB_TOKEN}</authToken>
 							<tagName>${build.date}</tagName>
 							<name>${BaseFileName}</name>
-							<targetCommitish>${branch}</targetCommitish>
+							<targetCommitish>${repBranch}</targetCommitish>
 							<releaseNotes>${notes}</releaseNotes>
-							<draft>${Hide}</draft>
+							<draft>${hide}</draft>
 							<assets>
 								<asset>target/${BaseFileName}.jar</asset>
 								<asset>target/${BaseFileName}-mini.jar</asset>
