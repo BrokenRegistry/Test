@@ -35,6 +35,5 @@ jobs:
            -Dbranch=main
            -Dnotes=releaseNotesBR.md
            -Dhide=false
-           --file pom.xml
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
