@@ -26,18 +26,21 @@
 		<!-- #################################################### -->
 		<!-- Parameters that ca be overriden in .yml Actions file -->
 		<!-- <RepoId>Fusion-Mod</RepoId>                          -->
-		<!-- <AuthorId>BrokenRegistry</AuthorId>                  -->
-		<!-- <BranchId>main</BranchId>                            -->
-		<!-- <NotesId>releaseNotes.md</NotesId>                   -->
+		<!-- <repOwner>BrokenRegistry</repOwner>                        -->
+		<!-- <repository>ToBrokenRegistry/Fusion-Mod</repository> -->
+		<!-- <branch>main</branch>                                -->
+		<!-- <notes>releaseNotes.md</notes>                       -->
+		<!-- <Hide>false</Hide> # Publish as draft?               -->
 		<!-- Don't Forget:                                        -->
 		<!-- In Settings: Actions have to be enabled              -->
 		<!-- In Settings: Give workflows the right to write       -->
 		<!-- #################################################### -->
 		<!-- Default values if not overriden -->
 		<RepoId>Fusion-Mod</RepoId>
-		<AuthorId>ToBrokenRegistry</AuthorId>
-		<BranchId>Tomain</BranchId>
-		<NotesId>releaseNotes.md</NotesId>
+		<repOwner>ToBrokenRegistry</repOwner>
+		<repository>ToBrokenRegistry/Fusion-Mod</repository>
+		<branch>Tomain</branch>
+		<notes>releaseNotes.md</notes>
 		<Hide>false</Hide>
 		<!-- #################################################### -->
 		<pdfFileName>Description.pdf</pdfFileName>
@@ -54,15 +57,15 @@
 	<scm>
 		<connection>scm:git:${project.scm.url}</connection>
 		<developerConnection>scm:git:${project.scm.url}</developerConnection>
-		<url>https://github.com/${AuthorId}/${RepoId}.git</url>
+		<url>https://github.com/${repository}.git</url>
 		<tag>HEAD</tag>
 	</scm>
 
 	<distributionManagement>
 		<repository>
 			<id>github</id>
-			<name>${AuthorId}</name>
-			<url>https://maven.pkg.github.com/${AuthorId}/${RepoId}</url>
+			<name>${repOwner}</name>
+			<url>https://maven.pkg.github.com/${repository}</url>
 		</repository>
 	</distributionManagement>
 
@@ -285,7 +288,7 @@
 										implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
 									<mainClass>rotp.Rotp</mainClass>
 									<manifestEntries>
-										<Built-By>${AuthorId}</Built-By>
+										<Built-By>${repOwner}</Built-By>
 										<Mini>true</Mini>
 									</manifestEntries>
 								</transformer>
@@ -317,7 +320,7 @@
 										implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
 									<mainClass>rotp.RotpGovernor</mainClass>
 									<manifestEntries>
-										<Built-By>${AuthorId}</Built-By>
+										<Built-By>${repOwner}</Built-By>
 									</manifestEntries>
 								</transformer>
 							</transformers>
@@ -438,13 +441,13 @@
 					<execution>
 						<id>default-cli</id>
 						<configuration>
-							<owner>${AuthorId}</owner>
+							<owner>${repOwner}</owner>
 							<repository>${RepoId}</repository>
 							<authToken>${GITHUB_TOKEN}</authToken>
 							<tagName>${build.date}</tagName>
 							<name>${BaseFileName}</name>
-							<targetCommitish>${BranchId}</targetCommitish>
-							<releaseNotes>${NotesId}</releaseNotes>
+							<targetCommitish>${branch}</targetCommitish>
+							<releaseNotes>${notes}</releaseNotes>
 							<draft>${Hide}</draft>
 							<assets>
 								<asset>target/${BaseFileName}.jar</asset>
