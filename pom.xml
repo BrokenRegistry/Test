@@ -31,8 +31,8 @@
 		<!-- In Settings: Actions have to be enabled            -->
 		<!-- In Settings: Give workflows the right to write     -->
 		<!-- ################################################## -->
-		<RepoId>Test</RepoId>
-		<AuthorId>BrokenRegistry</AuthorId>
+		<RepoId>ToTest</RepoId>
+		<AuthorId>ToBrokenRegistry</AuthorId>
 		<!-- ################################################## -->
 		<pdfFileName>Description.pdf</pdfFileName>
 		<BaseFileName>rotp-${revision}</BaseFileName>
