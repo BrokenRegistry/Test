@@ -429,7 +429,6 @@
 							<tagName>${build.date}</tagName>
 							<name>${BaseFileName}</name>
 							<targetCommitish>main</targetCommitish>
-							<releaseNotes>releaseNotesBR.md</releaseNotes>
 						</configuration>
 					</execution>
 				</executions>
