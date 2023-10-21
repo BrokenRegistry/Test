@@ -29,10 +29,10 @@ jobs:
       run: sudo cat /proc/cpuinfo
     - name: Build with Maven
       run: mvn -B clean package github-release:github-release -DGITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} -Dmaven.javadoc.skip=true
-           -Dfolder=${{ github.repository }}
            -DrepOwner=${{ github.repository_owner }}
-           -DRepoId=Test
-           -Dbranch=main
+           -DrepName=${{ github.event.repository.name }}
+           -DrepFullName=${{ github.repository }}
+           -DrepBranch=main
            -Dnotes=releaseNotesBR.md
            -Dhide=false
       env:
