@@ -438,7 +438,7 @@
 							<tagName>${build.date}</tagName>
 							<name>${BaseFileName}</name>
 							<targetCommitish>main</targetCommitish>
-							<releaseNotes>releaseNotesBR.md</releaseNotes>
+							<releaseNotes>${NotesId}</releaseNotes>
 							<assets>
 								<asset>target/${BaseFileName}.jar</asset>
 								<asset>target/${BaseFileName}-mini.jar</asset>
