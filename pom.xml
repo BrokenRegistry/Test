@@ -39,15 +39,15 @@
 	<scm>
 		<connection>scm:git:${project.scm.url}</connection>
 		<developerConnection>scm:git:${project.scm.url}</developerConnection>
-		<url>https://github.com/${AuthorId}/${RepoId}.git</url>
+		<url>https://github.com/BrokenRegistry/Test.git</url>
 		<tag>HEAD</tag>
 	</scm>
 
 	<distributionManagement>
 		<repository>
 			<id>github</id>
-			<name>${AuthorId}</name>
-			<url>https://maven.pkg.github.com/${AuthorId}/${RepoId}</url>
+			<name>BrokenRegistry</name>
+			<url>https://maven.pkg.github.com/BrokenRegistry/Test</url>
 		</repository>
 	</distributionManagement>
 
