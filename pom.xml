@@ -48,7 +48,7 @@
 	<scm>
 		<connection>scm:git:${project.scm.url}</connection>
 		<developerConnection>scm:git:${project.scm.url}</developerConnection>
-		<url>https://github.com/${AuthorId}/${AuthorId}.git</url>
+		<url>https://github.com/${AuthorId}/${RepoId}.git</url>
 		<tag>HEAD</tag>
 	</scm>
 
@@ -56,7 +56,7 @@
 		<repository>
 			<id>github</id>
 			<name>${AuthorId}</name>
-			<url>https://maven.pkg.github.com/${AuthorId}/${AuthorId}</url>
+			<url>https://maven.pkg.github.com/${AuthorId}/${RepoId}</url>
 		</repository>
 	</distributionManagement>
 
@@ -433,7 +433,7 @@
 						<id>default-cli</id>
 						<configuration>
 							<owner>${AuthorId}</owner>
-							<repository>${AuthorId}</repository>
+							<repository>${RepoId}</repository>
 							<authToken>${GITHUB_TOKEN}</authToken>
 							<tagName>${build.date}</tagName>
 							<name>${BaseFileName}</name>
