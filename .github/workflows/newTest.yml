@@ -9,11 +9,11 @@ jobs:
     steps:
       - name: Dump Repo Name
         env:
-          GITHUB_REPO: ${{ github.event.repository.name }}
+          GITHUB_REPO: ${{ github.event.repository }}
         run: echo "$GITHUB_REPO"
       - name: Dump Branch Name
         env:
-          GITHUB_BRANCH: ${{ github.event.ref_name }}
+          GITHUB_BRANCH: ${{ github.event }}
         run: echo "$GITHUB_BRANCH"
       - name: Dump Branch Name 2
         env:
