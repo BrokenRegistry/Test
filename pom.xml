@@ -415,33 +415,6 @@
 				</executions>
 			</plugin>
 			<!-- runs with github-release:github-release -->
-			<plugin>
-				<groupId>com.ragedunicorn.tools.maven</groupId>
-				<artifactId>github-release-maven-plugin</artifactId>
-				<version>1.0.5</version>
-				<executions>
-					<execution>
-						<id>default-cli</id>
-						<configuration>
-							<owner>${AuthorId}</owner>
-							<repository>${RepoId}</repository>
-							<authToken>${GITHUB_TOKEN}</authToken>
-							<tagName>${build.date}</tagName>
-							<name>${BaseFileName}</name>
-							<targetCommitish>main</targetCommitish>
-							<releaseNotes>releaseNotesBR.md</releaseNotes>
-							<assets>
-								<asset>target/${BaseFileName}.jar</asset>
-								<asset>target/${BaseFileName}-mini.jar</asset>
-								<asset>target/${BaseFileName}-windows.zip</asset>
-								<asset>${pdfFileName}</asset>
-								<asset>BitmapGalaxyExamples.zip</asset>
-								<!-- <asset>Profiles.pdf</asset> -->
-							</assets>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
 		</plugins>
 	</build>
 </project>
