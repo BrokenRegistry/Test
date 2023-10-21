@@ -415,6 +415,25 @@
 				</executions>
 			</plugin>
 			<!-- runs with github-release:github-release -->
+			<plugin>
+				<groupId>com.ragedunicorn.tools.maven</groupId>
+				<artifactId>github-release-maven-plugin</artifactId>
+				<version>1.0.5</version>
+				<executions>
+					<execution>
+						<id>default-cli</id>
+						<configuration>
+							<owner>BrokenRegistry</owner>
+							<repository>Test</repository>
+							<authToken>${GITHUB_TOKEN}</authToken>
+							<tagName>${build.date}</tagName>
+							<name>${BaseFileName}</name>
+							<targetCommitish>main</targetCommitish>
+							<releaseNotes>releaseNotesBR.md</releaseNotes>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 </project>
