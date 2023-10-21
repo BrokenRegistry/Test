@@ -23,21 +23,23 @@
 		<exeVersion>${current.time}</exeVersion>
 		<!-- Tag Format yyyy/MM/dd/HH/mm -->
 		<gitHubTag>${build.date}</gitHubTag>
-		<!-- ################################################## -->
-		<!-- Parameters to be set for GitHub Build thru actions -->
-		<!-- <RepoId>Fusion-Mod</RepoId>                        -->
-		<!-- <AuthorId>BrokenRegistry</AuthorId>                -->
-		<!-- <BranchId>main</BranchId>                          -->
-		<!-- <NotesId>releaseNotes.md</NotesId>                 -->
-		<!-- Don't Forget:                                      -->
-		<!-- In Settings: Actions have to be enabled            -->
-		<!-- In Settings: Give workflows the right to write     -->
-		<!-- ################################################## -->
-		<RepoId>ToTest</RepoId>
+		<!-- #################################################### -->
+		<!-- Parameters that ca be overriden in .yml Actions file -->
+		<!-- <RepoId>Fusion-Mod</RepoId>                          -->
+		<!-- <AuthorId>BrokenRegistry</AuthorId>                  -->
+		<!-- <BranchId>main</BranchId>                            -->
+		<!-- <NotesId>releaseNotes.md</NotesId>                   -->
+		<!-- Don't Forget:                                        -->
+		<!-- In Settings: Actions have to be enabled              -->
+		<!-- In Settings: Give workflows the right to write       -->
+		<!-- #################################################### -->
+		<!-- Default values if not overriden -->
+		<RepoId>Fusion-Mod</RepoId>
 		<AuthorId>ToBrokenRegistry</AuthorId>
 		<BranchId>Tomain</BranchId>
-		<NotesId>ToreleaseNotesBR.md</NotesId>
-		<!-- ################################################## -->
+		<NotesId>releaseNotes.md</NotesId>
+		<Hide>false</Hide>
+		<!-- #################################################### -->
 		<pdfFileName>Description.pdf</pdfFileName>
 		<BaseFileName>rotp-${revision}</BaseFileName>
 	 	<!-- Maven Standard -->
@@ -443,6 +445,7 @@
 							<name>${BaseFileName}</name>
 							<targetCommitish>${BranchId}</targetCommitish>
 							<releaseNotes>${NotesId}</releaseNotes>
+							<draft>${Hide}</draft>
 							<assets>
 								<asset>target/${BaseFileName}.jar</asset>
 								<asset>target/${BaseFileName}-mini.jar</asset>
