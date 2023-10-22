@@ -1,7 +1,7 @@
 # This workflow will build a Java project with Maven
 # For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
 
-name: Test Release
+name: New Release
 
 on:
   workflow_dispatch:
@@ -37,4 +37,4 @@ jobs:
            -Dhide=false
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        RELEASE_NOTES: ${{ github.repository_owner == 'Xilmi' && 'releaseNotesXilmi.md' || 'releaseNotesBR.md' }}
+        RELEASE_NOTES: ${{ github.repository_owner == 'BrokenRegistry' && 'releaseNotesBR.md' || 'releaseNotesXilmi.md' }}
